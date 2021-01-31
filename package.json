@@ -1,5 +1,5 @@
 {
-    "name": "johnny-tools-actions",
+    "name": "action-test",
     "version": "1.0.1",
     "description": "",
     "main": "./dist/index.js",
