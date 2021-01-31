@@ -12,7 +12,7 @@ jobs:
                   node-version: 12
                   registry-url: https://registry.npmjs.org/
             - run: npm ci
-            - run: cat /home/runner/work/_temp/.npmrc
+            - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
             - run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{secrets.npm_token}}
