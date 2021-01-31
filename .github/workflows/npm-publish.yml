@@ -6,12 +6,8 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 12
-            - run: npm ci
-            - run: npm test
+            - uses: actions/checkout@master
+            - uses: codecov/codecov-action@v1
             - run: codecov -f coverage/*.json
 
     publish-npm:
