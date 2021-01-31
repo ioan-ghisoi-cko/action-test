@@ -4,7 +4,7 @@
 name: Node.js Package
 
 on: push
-s
+
 jobs:
     build:
         runs-on: ubuntu-latest
