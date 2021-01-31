@@ -3,10 +3,8 @@
 
 name: Node.js Package
 
-on:
-    release:
-        types: [created]
-
+on: push
+s
 jobs:
     build:
         runs-on: ubuntu-latest
