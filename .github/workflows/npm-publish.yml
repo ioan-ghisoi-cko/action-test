@@ -12,6 +12,7 @@ jobs:
                   node-version: 12
             - run: npm ci
             - run: npm test
+            - run: codecov -f coverage/*.json
 
     publish-npm:
         needs: test
@@ -24,6 +25,7 @@ jobs:
                   registry-url: https://registry.npmjs.org/
             - run: npm ci
             - run: npm run build
+            - run: rsync -avh --progress ./types/ ./
             - run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
