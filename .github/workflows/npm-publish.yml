@@ -49,18 +49,11 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
-            - name: Release to GitHub Pages
+            - run: cd documentation
               env:
                 USE_SSH: true
-                GIT_USER: git
+                GIT_USER: gits
                 run: |
                     git config --global user.email "actions@gihub.com"
                     git config --global user.name "gh-actions"
-                    if [ -e yarn.lock ]; then
-                    yarn install --frozen-lockfile
-                    elif [ -e package-lock.json ]; then
-                    npm ci
-                    else
-                    npm i
-                    fi
                     npx docusaurus deploy
