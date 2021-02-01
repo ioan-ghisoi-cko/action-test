@@ -48,6 +48,9 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
+              env:
+                USE_SSH: true
+                GIT_USER: git
             - run: |
                     cd documentation && npm i
                     git config --global user.email "actions@gihub.com"
