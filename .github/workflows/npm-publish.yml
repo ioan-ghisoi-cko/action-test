@@ -44,6 +44,10 @@ jobs:
     publish-docs:
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
             - name: step
               env:
                SSH_AUTH_SOCK: /tmp/ssh_agent.sock
