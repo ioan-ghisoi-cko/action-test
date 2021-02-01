@@ -16,4 +16,3 @@ jobs:
                   token: ${{ secrets.CODECOV_TOKEN }}
             - run: npm ci
             - run: npm test
-            - name: Codecov
