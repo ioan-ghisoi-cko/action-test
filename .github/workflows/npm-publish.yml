@@ -14,18 +14,6 @@ jobs:
                   registry-url: https://registry.npmjs.org/
             - run: npm ci
             - run: npm test 
-            
-            - name: Upload coverage to Codecov
-            - uses: actions/checkout@master
-            - uses: codecov/codecov-action@v1
-              with:
-                    token: ${{ secrets.CODECOV_TOKEN }}
-                    directory: ./coverage/reports/
-                    flags: unittests
-                    name: codecov-umbrella
-                    fail_ci_if_error: true
-                    path_to_write_report: ./coverage/codecov_report.txt
-                    verbose: true
 
     publish-npm:
         needs: test
