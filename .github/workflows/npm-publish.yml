@@ -11,8 +11,8 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
+            - run: npm ci
+            - run: npm test
             - uses: codecov/codecov-action@v1.2.1
               with:
                   token: ${{ secrets.CODECOV_TOKEN }}
-            - run: npm ci
-            - run: npm test
