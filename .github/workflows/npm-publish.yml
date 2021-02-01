@@ -6,6 +6,16 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
+            - name: Test
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+                  registry-url: https://registry.npmjs.org/
+            - run: npm ci
+            - run: npm test 
+            
+            - name: Upload coverage to Codecov
             - uses: actions/checkout@master
             - uses: codecov/codecov-action@v1
               with:
@@ -16,8 +26,6 @@ jobs:
                     fail_ci_if_error: true
                     path_to_write_report: ./coverage/codecov_report.txt
                     verbose: true
-            - run: npm ci
-            - run: npm test
 
     publish-npm:
         needs: test
