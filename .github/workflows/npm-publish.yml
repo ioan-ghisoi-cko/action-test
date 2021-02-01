@@ -7,11 +7,8 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - name: Test Code
-            - uses: actions/checkout@master
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 12
+            - name: Checking out our code
+              uses: actions/checkout@master
             - name: Say something
               run: |
                 echo "A little less ${message}"
