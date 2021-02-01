@@ -42,7 +42,7 @@ describe('Request a payment or payout', () => {
 
     it('should set the public key in constructor', () => {
         const cko = new Checkout(SK, { pk: 'pk_123' });
-        expect(cko.config.pk).to.equal('pk_123');
+        expect(cko.config.pk).to.equal('pk_1234');
     });
 
     it('should set read env variables', () => {
