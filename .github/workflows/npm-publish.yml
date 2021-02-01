@@ -50,13 +50,7 @@ jobs:
             - name: Build
               run: |
                   cd documentation
-                  if [ -e yarn.lock ]; then
-                  yarn install --frozen-lockfile
-                  elif [ -e package-lock.json ]; then
-                  npm ci
-                  else
                   npm i
-                  fi
                   npm run build
             - name: Release to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
