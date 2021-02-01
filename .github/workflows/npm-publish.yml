@@ -48,8 +48,8 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
-            - run: cd documentation && npm i
             - run: |
+                    cd documentation && npm i
                     git config --global user.email "actions@gihub.com"
                     git config --global user.name "gh-actions"
                     npx docusaurus deploy
